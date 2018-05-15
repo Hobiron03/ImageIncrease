@@ -1,7 +1,9 @@
-<%= form_tag '/fileuploads', method: 'post', multipart: true do%>
+<%= form_tag '/upload', method: 'post', multipart: true do%>
 	<label>ファイル</label>
-	<%=file_field :fileupload, :file %>
+	<input name="image" type="file">
+	<input type="submit" value="送信">
+<% end %>
 
-	 <%= submit_tag 'Send file' %>
-	 
+<% if File.exist? "public/user_images/target_img.jpg"%>
+	<%= image_tag '/user_images/target_img.jpg' %>
 <% end %>
