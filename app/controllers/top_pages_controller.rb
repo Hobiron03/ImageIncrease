@@ -13,7 +13,7 @@ class TopPagesController < ApplicationController
 		if params[:image]
 			image_name = "target_img.jpg"
 			image = params[:image]
-			#File.binwrite("public/user_images/#{image_name}", image.read)
+			File.binwrite("public/user_images/#{image_name}", image.read)
 		end
 		#system('python3 increase_image.py public/user_images/target_img.jpg')
 
