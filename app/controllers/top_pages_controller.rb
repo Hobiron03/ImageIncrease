@@ -1,5 +1,6 @@
 class TopPagesController < ApplicationController
 	def index
+		Dir.mkdir("public/user_images") unless File.exist?("public/user_images")
 	end
 
 	def delete_image
