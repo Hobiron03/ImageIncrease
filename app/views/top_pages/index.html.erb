@@ -1,9 +1,24 @@
-<%= form_tag '/upload', method: 'post', multipart: true do%>
-	<label>ファイル</label>
-	<input name="image" type="file">
-	<input type="submit" value="送信">
-<% end %>
 
-<% if File.exist? "public/user_images/target_img.jpg"%>
-	<%= image_tag '/user_images/target_img.jpg' %>
-<% end %>
+	<% if File.exist? "public/user_images/target_img.jpg"%>
+		<div class="confirm">
+			<p class="text-center">この画像で良いですか？</p>
+			<img src="/user_images/target_img.jpg" class="center-block input-image">
+			<button type="button" class="btn btn-primary center-block">水増し開始！</button>
+
+			<%= form_tag reset_url, method: 'get' do%>
+				<button type="submit" class="btn btn-danger center-block">別の画像にする</button>
+			<%end%>
+		</div>
+	<%else%>
+		<div class=" center-block">
+			<%= form_tag '/upload', method: 'post', multipart: true do%>
+			<form>
+        		<div class="form-group">
+            		<label>水増ししたい画像を送信してください</label>
+            		<input type="file" name="image" class="center-block">
+        		</div>
+        		<button type="submit" class="btn btn-primary">画像送信！！</button>
+    		</form>
+			<% end %>
+		</div>
+	<% end %>
