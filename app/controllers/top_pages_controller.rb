@@ -1,4 +1,6 @@
 class TopPagesController < ApplicationController
+
+
 	def index
 		Dir.mkdir("public/user_images") unless File.exist?("public/user_images")
 		Dir.mkdir("public/user_create_img") unless File.exist?("public/user_create_img")
@@ -20,6 +22,17 @@ class TopPagesController < ApplicationController
 		system('python3 increase_image.py public/user_images/target_img.jpg')
 
 		redirect_to(root_url)
+	end
+
+	def show
+		@create_imgs = []
+		dir = Dir.open("public/user_create_img")
+
+		dir.each do |img|
+			@create_imgs << img
+		end
+		@create_imgs.shift
+		@create_imgs.shift
 	end
 
 	private

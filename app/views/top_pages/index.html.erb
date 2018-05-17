@@ -3,8 +3,10 @@
 		<div class="confirm">
 			<p class="text-center">この画像で良いですか？</p>
 			<img src="/user_images/target_img.jpg" class="center-block input-image">
-			<button type="button" class="btn btn-primary center-block">水増し開始！</button>
 
+			<%= form_tag result_url, method: 'get' do%>
+				<button type="submit" class="btn btn-primary center-block">水増し開始！</button>
+			<% end %>
 			<%= form_tag reset_url, method: 'get' do%>
 				<button type="submit" class="btn btn-danger center-block">別の画像にする</button>
 			<%end%>
