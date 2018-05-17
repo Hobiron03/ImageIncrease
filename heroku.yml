@@ -1,0 +1,8 @@
+build:
+  languages:
+    - ruby
+    - python
+  packages:
+    - libopencv-dev
+run:
+  web: bin/rails server -p $PORT -e $RAILS_ENV
