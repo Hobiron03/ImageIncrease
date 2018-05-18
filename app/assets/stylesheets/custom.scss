@@ -144,6 +144,13 @@ main {
   object-fit: contain;
 }
 
+.output-image{
+  margin-left:40px;
+  background-color: #f5f5f5;
+  width: 500px; height: 500px;
+  object-fit: contain;
+}
+
 form{
   text-align: center;
   margin-bottom: 20px;
@@ -165,8 +172,6 @@ form{
   }
 }
 
-
-
 .show-result{
   p{
     font-size:32px;
@@ -176,6 +181,10 @@ form{
 
 .img-result{
   margin-left: 70px;
+}
+
+.go-top{
+  margin-top: 15px;
 }
 
 /* footer */
