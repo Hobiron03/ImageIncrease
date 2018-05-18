@@ -2,7 +2,7 @@
 	<p class="text-center">結果</p>
 	<div class="img-result">
 		<% @create_imgs.each do |img|%>
-			<%= image_tag("/user_images/target_img.jpg", :class => "output-image") %>
+			<%= image_tag("/user_create_img/#{img}", :class => "output-image") %>
 		<%end%>
 	</div>
 	<button type="submit" class="btn btn-success center-block go-top">一括ダウンロード</button>
