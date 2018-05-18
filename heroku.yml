@@ -1,8 +1,9 @@
 build:
   languages:
     - ruby
-    - python3
+    - python
   packages:
     - libopencv-dev
+    - libSM.x86_64
 run:
   web: bin/rails server -p $PORT -e $RAILS_ENV
