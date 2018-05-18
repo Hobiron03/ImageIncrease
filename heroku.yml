@@ -1,7 +1,7 @@
 build:
   languages:
     - ruby
-    - python
+    - python3
   packages:
     - libopencv-dev
 run:
