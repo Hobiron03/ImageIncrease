@@ -19,7 +19,7 @@ class TopPagesController < ApplicationController
 			image = params[:image]
 			File.binwrite("public/user_images/#{image_name}", image.read)
 		end
-		system('python increase_image.py public/user_images/target_img.jpg')
+		system('python3 increase_image.py public/user_images/target_img.jpg')
 
 		redirect_to(root_url)
 	end
